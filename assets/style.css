@@ -21,7 +21,8 @@ body {
 }
 
 .startQuizBtn,
-.rulesBox {
+.rulesBox,
+.quizBox {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -94,4 +95,58 @@ body {
     color: black;
     border-color: rgb(50, 50, 211);
     background-color: rgb(50, 50, 211);
+}
+
+.quizBox {
+    width: 550px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.quizBox header {
+    height: 70px;
+    padding: 0 30px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+}
+
+.quizBox header .title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.quizBox header .timer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 145px;
+    height: 45px;
+    background-color: #cce5ff;
+    border: 1px solid #b8daff;
+    border-radius: 10px;
+    padding: 0 8px;
+}
+
+.quizBox header .timer .timeText {
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+}
+
+.quizBox header .timer .timerSec {
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #343a40;
+    height: 30px;
+    width: 45px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 10px;
+    border: 1px solid #343a40;
+    user-select: none;
 }
