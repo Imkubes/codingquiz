@@ -98,6 +98,7 @@ body {
 }
 
 .quizBox {
+    display: none;
     width: 550px;
     background-color: #fff;
     border-radius: 10px;
@@ -168,7 +169,7 @@ body {
     display: block;
 }
 
-.quizBox section .optionList .option {
+section .optionList .option {
     background-color: aliceblue;
     border: 1px solid #84c5fe;
     border-radius: 10px;
@@ -183,4 +184,45 @@ body {
 
 .optionList .option:last-child {
     margin-bottom: 0px;
+}
+
+.quizBox footer {
+    height: 60px;
+    width: 100%;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quizBox footer .totalQuestions span {
+    display: flex;
+    user-select: none;
+}
+
+footer .totalQuestions span p {
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+footer .totalQuestions span p:first-child {
+    padding-left: 0px;
+}
+
+footer .nextQuestionBtn{
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    color: black;
+    background-color: rgb(50, 50, 211);
+    border-radius: 10px;
+    border: 1px solid rgb(50, 50, 211);
+    cursor: pointer;
+}
+
+footer .nextQuestionBtn:hover {
+    background-color: #343a40;
 }
