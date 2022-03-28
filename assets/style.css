@@ -22,7 +22,8 @@ body {
 
 .startQuizBtn,
 .rulesBox,
-.quizBox {
+.quizBox,
+.resultBox {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -226,3 +227,31 @@ footer .nextQuestionBtn{
 footer .nextQuestionBtn:hover {
     background-color: #343a40;
 }
+
+.resultBox {
+    background-color: #fff;
+    width: 450px;
+    padding: 25px 30px;
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.resultBox .icon {
+    font-size: 100px;
+    margin-bottom: 10px;
+}
+
+.resultBox .completeText {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.resultBox .scoreText span {
+    display: flex;
+}
+
+.scoreText
