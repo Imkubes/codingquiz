@@ -1,0 +1,97 @@
+a:link, a:visited {
+    color: black;
+}
+
+.highscoreslink {
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.Welcome h1 {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 25px;
+    font-size: 60px;
+}
+
+body {
+    background-color: rgb(50, 50, 211);
+}
+
+.startQuizBtn,
+.rulesBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.startQuizBtn button {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+}
+
+.rulesBox {
+    display: none;
+    width: 540px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.rulesBox .rulesBoxTitle {
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    padding: 0 35px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.rulesBox .rulesBoxText {
+    padding: 15px 35px;
+}
+
+.rulesBox .rulesBoxText .rulesText {
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+.rulesBox .buttons {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 35px;
+    border-top: 1px solid black;
+}
+
+.rulesBox .buttons button {
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttons button.restartQuiz {
+    color: black;
+    border-color: rgb(50, 50, 211);
+    background-color: rgb(50, 50, 211);
+}
+
+.buttons button.quitQuiz {
+    color: black;
+    border-color: rgb(50, 50, 211);
+    background-color: rgb(50, 50, 211);
+}

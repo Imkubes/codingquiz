@@ -1,3 +1,80 @@
-start screen with title, start button, view highscores button, timer
-Question screen container with question text, 4 buttons with options, moving timer
-End of game container with final score, form to enter name, and submit button.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/reset.css"/>
+    <link rel="stylesheet" href="./assets/style.css"/>
+    <title>Coding Quiz</title>
+</head>
+<body>
+    <header>
+        <!--HighScores Button-->
+        <div class="highscoreslink">
+            <a href="#">Highscores</a>
+        </div>
+        <!--Header-->
+        <div class="Welcome">
+            <h1>Welcome to the Coding Quiz!</h1>
+        </div>
+    </header>
+    <main>
+        <!--Start Quiz Button-->
+        <div class="startQuizBtn">
+            <button>Start Quiz</button>
+        </div>
+
+        <!--Rules Box-->
+        <div class="rulesBox">
+            <div class="rulesBoxTitle">
+                <span>Rules of the Quiz</span>
+            </div>
+            <div class="rulesBoxText">
+                <div class="rulesText">1. You have 1 minute to answer as many questions as possible.</div>
+                <div class="rulesText">2. Each incorrect answer will remove 10 seconds from the clock.</div>
+                <div class="rulesText">3. Each correct answer will add 10 seconds to the clock.</div>
+                <div class="rulesText">4. Quiz is over when you answer all the questions or the clock runs out of time.</div>
+            </div>
+            <!--Buttons-->
+            <div class="buttons">
+                <button class="restartQuiz">Restart</button>
+                <button class="quitQuiz">Quit</button>
+            </div>
+        </div>
+        <div class="quizBox">
+            <div class="timer">
+                <div class="timeText">Time Left</div>
+                <div class="timerSec">60</div>
+            </div>
+        </div>
+        <section>
+            <div class="questionText">
+                <span>What does CSS do?</span>
+            </div>
+            <div class="optionList">
+                <div class="option">
+                    <span>Style an HTML Page</span>
+                </div>
+                <div class="option">
+                    <span>Make the website functionable</span>
+                </div>
+                <div class="option">
+                    <span>Create dynamic webpage</span>
+                </div>
+                <div class="option">
+                    <span>None of the above</span>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="totalQuestions">
+                <span><p>2</p>of<p>5</p>Questions</span>
+            </div>
+            <button class="nextQuestionBtn">Next</button>
+        </footer>
+    </main>
+
+    <script src="./assets/script.js"></script>
+</body>
+</html>
