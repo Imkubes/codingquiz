@@ -9,6 +9,7 @@
     var StartQuizBtn = document.querySelector('.startQuizBtn button');
     var quizBox = document.querySelector('.quizBox');
     var optionList = document.querySelector('.optionList');
+    var timeCount = quizBox.querySelector('.timer .timerSec');
 
     //If start quiz button is pressed
     startQuizBtn.onclick = ()=>{
@@ -26,6 +27,7 @@
       quizBox.classList.add("activeQuiz"); //Shows the quiz
       showQuestions(0);
       questionCounter(1);
+      startTimer(60);
    }
 
 //Create an array of objects that hold all questions
@@ -37,6 +39,8 @@
     let questionCount = 0;
     let questionNum = 1;
     let score = 0;
+    let counter;
+    let timeValue = 60;
     var nextBtn = quizBox.querySelector('.nextQuestionBtn');
 
     //If next button is clicked
@@ -90,6 +94,15 @@
        //once user picks an option, all others are disabled
        for (let i = 0; i < allOptions.length; i++) {
           optionList.children[i].classList.add('disabled');
+       }
+    }
+
+
+    function startTimer(time){
+       counter = setInterval(timer, 1000);
+       function timer(){
+          timeCount.textContent = time;
+          time--;
        }
     }
 
