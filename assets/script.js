@@ -38,7 +38,7 @@
 
     let questionCount = 0;
     let questionNum = 1;
-    let score = 0;
+    let score = localStorage.getItem('score') || 0;
     let counter;
     let timeValue = 60;
     var nextBtn = quizBox.querySelector('.nextQuestionBtn');
@@ -76,14 +76,11 @@
        let correctAns = questions[questionCount].answer;
        let allOptions = optionList.children.length;
        if (userAns === correctAns){
-          score++;
-          counter += 10;
+          localStorage.setItem(score, score);
           answer.classList.add("correct");
           console.log("yas");
        } else {
          answer.classList.add("incorrect");
-         score--;
-         counter -= 10;
           console.log("no");
           console.log(score);
 
@@ -109,7 +106,7 @@
           if (time < 0){
              clearInterval(counter);
              alert("You ran out of time!");
-          }
+          } 
        }
     }
 
