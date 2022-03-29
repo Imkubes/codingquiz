@@ -23,6 +23,7 @@
     continueBtn.onclick = ()=>{
       infoBox.classList.remove("activeInfo"); //hides the info box
       quizBox.classList.add("activeQuiz"); //Shows the quiz
+      showQuestions(0);
    }
 
 //Create an array of objects that hold all questions
@@ -30,66 +31,22 @@
    // - Quuestion text 
     // - Correct answer
 
-    let questions = [
-       {
-          numb: 1,
-          question: "What does CSS do?",
-          answer: "Style an HTML Page",
-          options: [
-             "Style an HTML Page",
-             "Make the website functionable",
-             "Create dynamic webpage",
-             "None of the above"
-          ]
-       },
-       {
-         numb: 2,
-         question: "What does HTML stand for?",
-         answer: "Hyper Text Preprocessor",
-         options: [
-            "Hyper Text Multiple Language",
-            "Hyper Text Markup Language",
-            "Hyper Text Preprocessor",
-            "Hyper Tool Multi Language"
-         ]
-      },
-      {
-         numb: 3,
-         question: "What data type is true/false?",
-         answer: "Boolean",
-         options: [
-            "JQuery",
-            "Boolean",
-            "String",
-            "Number"
-         ]
-      },
-      {
-         numb: 4,
-         question: "What is JQuery?",
-         answer: "Javascript Library",
-         options: [
-            "Javascript Library",
-            "An Element",
-            "DOM",
-            "A Data Type"
-         ]
-      },
-      {
-         numb: 5,
-         question: "How do I turn a String, into an Array",
-         answer: ".split() Function",
-         options: [
-            ".concat() Function",
-            ".splice() Function",
-            ".join() Function",
-            ".split() Function"
-         ]
-      },
-    ]
 
     let questionCount = 0;
+    var nextBtn = quizBox.querySelector('.nextQuestionBtn');
 
+    //Getting questions and options from array
+    function showQuestions(index) {
+       var questionText = document.querySelector('.questionText');
+       var optionList = document.querySelector('.optionList')
+       let questionTag = '<span>'+ questions[index].question +'</span>';
+       let optionTag = '<div class="option">'+ questions[index].options[0] +'<span></span></div>'
+                       + '<div class="option">'+ questions[index].options[1] +'<span></span></div>'
+                       + '<div class="option">'+ questions[index].options[2] +'<span></span></div>'
+                       + '<div class="option">'+ questions[index].options[3] +'<span></span></div>';
+       questionText.innerHTML = questionTag;
+       optionList.innerHTML = optionTag;
+    }
 
 
 
