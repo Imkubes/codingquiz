@@ -35,6 +35,7 @@
 
     let questionCount = 0;
     let questionNum = 1;
+    let score = 0;
     var nextBtn = quizBox.querySelector('.nextQuestionBtn');
 
     //If next button is clicked
@@ -60,6 +61,24 @@
                        + '<div class="option">'+ questions[index].options[3] +'<span></span></div>';
        questionText.innerHTML = questionTag;
        optionList.innerHTML = optionTag;
+       var option = optionList.querySelectorAll('.option');
+       for (let i = 0; i < option.length; i++) {
+          option[i].setAttribute("onclick", "optionSelected(this)");
+       }
+    }
+
+    function optionSelected(answer){
+       let userAns = answer.textContent;
+       let correctAns = questions[questionCount].answer;
+       if (userAns === correctAns){
+          score++;
+          answer.classList.add("correct");
+          console.log("yas");
+       } else {
+         answer.classList.add("incorrect");
+          console.log("no");
+          console.log(score);
+       }
     }
 
     function questionCounter(index){   

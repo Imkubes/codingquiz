@@ -201,6 +201,20 @@ section .optionList .option {
     margin-bottom: 0px;
 }
 
+.optionList .option.correct {
+    color: white;
+    background-color: green;
+    border-color: white;
+    font-weight: bold;
+}
+
+.optionList .option.incorrect {
+    color: white;
+    background-color: red;
+    border-color: white;
+    font-weight: bold;
+}
+
 .quizBox footer {
     height: 60px;
     width: 100%;
