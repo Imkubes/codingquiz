@@ -31,6 +31,14 @@ body {
     box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+.rulesBox.activeInfo,
+.quizBox.activeQuiz{
+    z-index: 5;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
 .startQuizBtn button {
     font-size: 25px;
     font-weight: bold;
@@ -81,6 +89,7 @@ body {
     margin: 0 5px;
     height: 40px;
     width: 100px;
+    outline: none;
     border: 1px solid transparent;
     border-radius: 10px;
     color: black;
@@ -89,7 +98,7 @@ body {
     cursor: pointer;
 }
 
-.buttons button.restartQuiz {
+.buttons button.continue {
     color: black;
     border-color: rgb(50, 50, 211);
     background-color: rgb(50, 50, 211);
