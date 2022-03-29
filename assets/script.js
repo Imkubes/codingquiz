@@ -27,7 +27,7 @@
       quizBox.classList.add("activeQuiz"); //Shows the quiz
       showQuestions(0);
       questionCounter(1);
-      startTimer(60);
+      startTimer(10);
    }
 
 //Create an array of objects that hold all questions
@@ -77,10 +77,13 @@
        let allOptions = optionList.children.length;
        if (userAns === correctAns){
           score++;
+          counter += 10;
           answer.classList.add("correct");
           console.log("yas");
        } else {
          answer.classList.add("incorrect");
+         score--;
+         counter -= 10;
           console.log("no");
           console.log(score);
 
@@ -103,6 +106,10 @@
        function timer(){
           timeCount.textContent = time;
           time--;
+          if (time < 0){
+             clearInterval(counter);
+             alert("You ran out of time!");
+          }
        }
     }
 
