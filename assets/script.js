@@ -24,6 +24,7 @@
       infoBox.classList.remove("activeInfo"); //hides the info box
       quizBox.classList.add("activeQuiz"); //Shows the quiz
       showQuestions(0);
+      questionCounter(1);
    }
 
 //Create an array of objects that hold all questions
@@ -33,12 +34,19 @@
 
 
     let questionCount = 0;
+    let questionNum = 1;
     var nextBtn = quizBox.querySelector('.nextQuestionBtn');
 
     //If next button is clicked
     nextBtn.onclick = ()=>{
-       questionCount++;
-       showQuestions(questionCount);
+       if(questionCount < questions.length - 1){
+         questionCount++;
+         questionNum++;
+         showQuestions(questionCount);
+         questionCounter(questionNum);
+       }else {
+          console.log("Questions Completed");
+       }
     }
 
     //Getting questions and options from array
@@ -52,6 +60,12 @@
                        + '<div class="option">'+ questions[index].options[3] +'<span></span></div>';
        questionText.innerHTML = questionTag;
        optionList.innerHTML = optionTag;
+    }
+
+    function questionCounter(index){   
+    var bottomQuestionCounter = document.querySelector('.totalQuestions');
+    let totalQuestionTag = '<span><p>'+ index +'</p>of<p>'+ questions.length +'</p>Questions</span>';
+    bottomQuestionCounter.innerHTML = totalQuestionTag;
     }
 
 
