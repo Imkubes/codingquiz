@@ -35,6 +35,12 @@
     let questionCount = 0;
     var nextBtn = quizBox.querySelector('.nextQuestionBtn');
 
+    //If next button is clicked
+    nextBtn.onclick = ()=>{
+       questionCount++;
+       showQuestions(questionCount);
+    }
+
     //Getting questions and options from array
     function showQuestions(index) {
        var questionText = document.querySelector('.questionText');
