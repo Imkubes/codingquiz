@@ -8,6 +8,7 @@
     var continueBtn = document.querySelector('.buttons .continue');
     var StartQuizBtn = document.querySelector('.startQuizBtn button');
     var quizBox = document.querySelector('.quizBox');
+    var optionList = document.querySelector('.optionList');
 
     //If start quiz button is pressed
     startQuizBtn.onclick = ()=>{
@@ -53,7 +54,6 @@
     //Getting questions and options from array
     function showQuestions(index) {
        var questionText = document.querySelector('.questionText');
-       var optionList = document.querySelector('.optionList')
        let questionTag = '<span>'+ questions[index].question +'</span>';
        let optionTag = '<div class="option">'+ questions[index].options[0] +'<span></span></div>'
                        + '<div class="option">'+ questions[index].options[1] +'<span></span></div>'
@@ -70,6 +70,7 @@
     function optionSelected(answer){
        let userAns = answer.textContent;
        let correctAns = questions[questionCount].answer;
+       let allOptions = optionList.children.length;
        if (userAns === correctAns){
           score++;
           answer.classList.add("correct");
@@ -78,6 +79,17 @@
          answer.classList.add("incorrect");
           console.log("no");
           console.log(score);
+
+          for (let i = 0; i < allOptions; i++) {
+             if (optionList.children[i].textContent == correctAns){
+                optionList.children[i].setAttribute("class", "option correct");
+             }
+          }
+       }
+
+       //once user picks an option, all others are disabled
+       for (let i = 0; i < allOptions.length; i++) {
+          optionList.children[i].classList.add('disabled');
        }
     }
 
